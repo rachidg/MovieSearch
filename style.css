@@ -1,0 +1,41 @@
+body {
+  background-color: #404040;
+}
+
+h1 {
+  text-align: center;
+  color: #E8E8E8;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+input:focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+div {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%
+}
+
+table {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+a:link {
+  color: #66FFFF;
+}
+
+p {
+  color: #E8E8E8;
+}

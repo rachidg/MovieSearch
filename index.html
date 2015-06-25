@@ -1,0 +1,41 @@
+<!doctype html PUBLIC>
+
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-latest.js"> </script>
+    <title>MovieSearch</title>
+  </head>
+
+  <body>
+	<h1>Search for Movies and TV shows</h1>
+  <br/>
+
+    <!-- Create a search bar and a div to store results -->
+    <input id="searchTerm" />
+    <div id="results"></div>
+
+    <script>
+      // Search on key release
+      $("#searchTerm").keyup(function(e){
+        var q = $("#searchTerm").val();
+
+        // Get JSON file of search results from OMDB API
+        $.getJSON("http://www.omdbapi.com/?s="+q,
+        function(data) {
+
+          $("#results").empty();
+          $("#results").append("<p>Results for <b>" + q + "</b>:</p>");
+
+          $.each(data.Search, function() {
+            //Display results
+            $("#results").append("<tr><td><a href='http://www.imdb.com/title/"+this.imdbID+"'>"+this.Title+"</a></td><td>"+this.Type+"</td><td>"+this.Year+"</td></tr>");
+            }
+          );
+      });
+    });
+    </script>
+
+  </body>
+</html>
